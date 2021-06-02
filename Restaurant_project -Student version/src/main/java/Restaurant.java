@@ -11,6 +11,7 @@ public class Restaurant {
     public LocalTime closingTime;
     public LocalTime currentTime=LocalTime.now();
     private List<Item> menu = new ArrayList<Item>();
+    public int orderTotal=0;
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
         this.name = name;
