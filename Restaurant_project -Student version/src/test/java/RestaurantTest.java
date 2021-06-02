@@ -74,7 +74,7 @@ class RestaurantTest {
     }
 
     @Test
-    public void removing_an_items_from_cart_should_return_orderTotal_after_subtraction_that_items_price(){
+    public void removing_an_items_from_cart_should_return_orderTotal_after_subtracting_that_items_price(){
         restaurant.addToCart("Sweet corn soup","Vegetable lasagne");
 
         restaurant.removeFromCart("Sweet corn soup");

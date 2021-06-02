@@ -59,16 +59,27 @@ public class Restaurant {
         menu.remove(itemToBeRemoved);
     }
     public void displayDetails(){
-        System.out.println("Restaurant:"+ name + "\n"
-                +"Location:"+ location + "\n"
-                +"Opening time:"+ openingTime +"\n"
-                +"Closing time:"+ closingTime +"\n"
-                +"Menu:"+"\n"+getMenu());
-
-    }
+        System.out.println("Restaurant:"+ name + "\n" +"Location:"+ location + "\n" +"Opening time:"
+                + openingTime +"\n" +"Closing time:"+ closingTime +"\n" +"Menu:"+"\n"+getMenu()); }
 
     public String getName() {
         return name;
+    }
+
+    public int addToCart(String... itemName){
+        for (String s : itemName) {
+            Item newCartItem = findItemByName(s);
+            orderTotal = orderTotal + newCartItem.getPrice();
+        }
+        return orderTotal;
+    }
+
+    public int removeFromCart(String... itemName){
+        for (String s : itemName) {
+            Item newCartItem = findItemByName(s);
+            orderTotal = orderTotal - newCartItem.getPrice();
+        }
+        return orderTotal;
     }
 
 }
